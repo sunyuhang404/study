@@ -1,0 +1,153 @@
+{
+  "main": {
+    "id": "2892d66e55abbc3b",
+    "type": "split",
+    "children": [
+      {
+        "id": "9b2cba119beb7e00",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "笔记/2021-04-08.md",
+            "mode": "source"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "e747a1dc6212e0bf",
+    "type": "split",
+    "children": [
+      {
+        "id": "b1811b23d6393d07",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a2488ae4f586c36e",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "1930ba5b86c9b735",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "1817a4bedc922750",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "933ce984bbdd26e7",
+    "type": "split",
+    "children": [
+      {
+        "id": "980baf769b1b0a90",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "34dfe6517a875ffe",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "笔记/2021-04-08.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "84825c8c81b1b916",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "507a417e5597a5e2",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "笔记/2021-04-08.md"
+              }
+            }
+          },
+          {
+            "id": "01a3d7f908c522b9",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 2
+      },
+      {
+        "id": "f00fcac9b6baeaf2",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "87181c75689df8f7",
+            "type": "leaf",
+            "state": {
+              "type": "todo",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "active": "9b2cba119beb7e00",
+  "lastOpenFiles": [
+    "笔记/2021-04-08.md",
+    "笔记/2021-04-07.md",
+    "安排/TODO.md",
+    "安排/自动化测试.md",
+    "学习/动态规划.md",
+    "安排/Untitled.md",
+    "Day Planners/Day Planner-20210407.md",
+    "笔记/2021-04-06.md",
+    "Untitled.md",
+    "动态规划.md"
+  ]
+}
