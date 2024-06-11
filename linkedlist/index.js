@@ -7,6 +7,7 @@ class ListNode {
     this.next = next;
   }
 }
+import { PriorityQueue } from '../heap/index.js'
 
 // 1.合并两个有序链表
 const merge = (l1, l2) => {
@@ -58,4 +59,41 @@ const split = (head, x) => {
   }
   p1.next = dummy2.next
   return dummy1.next
+}
+// 3.合并k个有序链表
+const mergeKList = (lists) => {
+  if (lists.length === 0) {
+    return null;
+  }
+  const dummy = new ListNode(-1);
+  let p = dummy;
+
+  const pq = new PriorityQueue()
+  for (let i = 0; i < lists.length; i++) {
+    const head = lists[i]
+    console.log(head)
+    if (head !== null) {
+      pq.enqueue(head)
+    }
+  }
+
+  while(!pq.isEmpty()) {
+    const node = pq.dequeue()
+
+    if (node) {
+      p.next = node
+      p = p.next
+      // console.log(node)
+      if (node.next !== null) {
+        pq.enqueue(node.next)
+      }
+    }
+  }
+  return dummy.next;
+}
+
+const res = mergeKList([[1,4,5],[1,3,4],[2,6]])
+// console.log(res)
+for (let i = 0; i < res.length; i++) {
+  console.log(res[i])
 }

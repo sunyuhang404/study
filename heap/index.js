@@ -1,4 +1,5 @@
-class MinHeap {
+
+export class MinHeap {
   constructor() {
     this.heap = []
   }
@@ -25,11 +26,19 @@ class MinHeap {
 
   // 上浮
   bubbleUp(index) {
-    // 如果节点的值比父节点小, 就交换当前节点和父节点的索引
-    while (index > 0 && this.heap[index] < this.heap[this.parent(index)]) {
-      this.swap(index, this.parent(index))
-      index = this.parent(index)
+    if (index === 0) {
+      return
     }
+    const parentIndex = this.parent(index)
+    if (this.heap[parentIndex] && this.heap[parentIndex] > this.heap[index]) {
+      this.swap(parentIndex,index)
+      this.bubbleUp(parentIndex)
+    }
+    // 如果节点的值比父节点小, 就交换当前节点和父节点的索引
+    // while (index > 0 && this.heap[index] < this.heap[this.parent(index)]) {
+    //   this.swap(index, this.parent(index))
+    //   index = this.parent(index)
+    // }
   }
 
   // 下沉
@@ -100,7 +109,7 @@ class MinHeap {
 }
 
 // 优先级队列
-class PriorityQueue {
+export class PriorityQueue {
   constructor() {
     this.minHeap = new MinHeap()
   }
@@ -133,7 +142,7 @@ pq.enqueue(3);
 pq.enqueue(8);
 pq.enqueue(1);
 
-console.log(pq.dequeue()); // 输出: 1
-console.log(pq.peek());    // 输出: 3
-console.log(pq.dequeue()); // 输出: 3
-console.log(pq.isEmpty()); // 输出: false
+// console.log(pq.dequeue()); // 输出: 1
+// console.log(pq.peek());    // 输出: 3
+// console.log(pq.dequeue()); // 输出: 3
+// console.log(pq.isEmpty()); // 输出: false
