@@ -16,7 +16,7 @@ class MinHeap {
         this.heap = []
     }
     parent(i) {
-        return (i - 1) / 2
+        return (i - 1) >> 1
     }
     left(i) {
         return 2 * i + 1
@@ -25,26 +25,35 @@ class MinHeap {
         return 2 * i + 2
     }
     swap(i1, i2) {
-        [this.heap[i1], this.heap[i2]] = [this.heap[i2], this.heap[i1]]
+        // [this.heap[i1], this.heap[i2]] = [this.heap[i2], this.heap[i1]]
+        const tmp = this.heap[i1]
+        this.heap[i1] = this.heap[i2]
+        this.heap[i2] = tmp
     }
     isEmpty() {
         return this.heap.length === 0
     }
     bubbleUp(i) {
+        if (i === 0) {
+            return
+
+        }
         const parentIndex = this.parent(i)
-        if (this.heap[parentIndex] && this.heap[i] < this.heap[parentIndex]) {
+        if (this.heap[parentIndex] && this.heap[i].val < this.heap[parentIndex].val) {
             this.swap(i, parentIndex)
             this.bubbleUp(parentIndex)
         }
     }
     bubbleDown(i) {
         const leftI = this.left(i)
-        if (this.heap[leftI] && this.heap[leftI] < this.heap[i]) {
+        const rightI = this.right(i)
+
+        if (this.heap[leftI] && this.heap[leftI].val < this.heap[i].val) {
             this.swap(i, leftI)
             this.bubbleDown(leftI)
         }
-        const rightI = this.right(i)
-        if (this.heap[rightI] && this.heap[rightI] < this.heap[i]) {
+
+        if (this.heap[rightI] && this.heap[rightI].val < this.heap[i].val) {
             this.swap(i, rightI)
             this.bubbleDown(rightI)
         }
@@ -57,6 +66,9 @@ class MinHeap {
         if (this.heap.length === 0) {
             throw new Error('empty!')
         }
+        if (this.heap.length === 1) {
+            return this.heap.pop()
+        }
         const top = this.heap[0]
         this.heap[0] = this.heap.pop()
         this.bubbleDown(0)
@@ -64,20 +76,22 @@ class MinHeap {
     }
 }
 var mergeKLists = function(lists) {
-    const dummy = new ListNode(-1)
+    const dummy = new ListNode(0)
     let p = dummy
 
 
     const list = new MinHeap()
     lists.forEach(node => {
-        list.add(node)
-
+        if (node) {
+            list.add(node)
+        }
     })
+
     while (!list.isEmpty()) {
         const top = list.pop()
-
         p.next = top
         p = p.next
+
         if (top.next) {
             list.add(top.next)
         }
